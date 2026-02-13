@@ -116,8 +116,12 @@
                 <x-header.notification-dropdown />
             </div>
 
-            <!-- User Dropdown -->
-            <x-header.user-dropdown />
+            <div class="flex items-center gap-2 2xsm:gap-3">
+                <!-- Branch Switcher -->
+        
+                <!-- User Dropdown -->
+                <x-header.user-dropdown />
+            </div>
         </div>
     </div>
 </header>
