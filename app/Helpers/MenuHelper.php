@@ -19,21 +19,38 @@ class MenuHelper
                 'can' => 'view-dashboard',
             ],
             [
+                'icon' => 'book',
+                'name' => 'Postingan',
+                'can' => ['manage-postingan', 'view-postingan'],
+                'subItems' => [
+                    [
+                        'name' => 'Kategori',
+                        'path' => '/postingan/kategori',
+                        'can' => 'manage-kategori'
+                    ],
+                    [
+                        'name' => 'Postingan',
+                        'path' => '/postingan/postingan',
+                        'can' => 'view-postingan'
+                    ],
+                ]
+            ],
+            [
                 'icon' => 'gear',
                 'name' => 'System',
                 'can' => ['manage-system', 'view-audit-log'],
                 'subItems' => [
-                    [
-                        'name' => 'Configuration',
-                        'path' => '/system/config',
-                        'can' => 'manage-system-config'
-                    ],
-                    [
-                        'name' => 'Audit Log',
-                        'path' => '/system/audit-log',
-                        'can' => 'view-system-audit'
-                    ],
-                    ['divider' => true],
+                    // [
+                    //     'name' => 'Configuration',
+                    //     'path' => '/system/config',
+                    //     'can' => 'manage-system-config'
+                    // ],
+                    // [
+                    //     'name' => 'Audit Log',
+                    //     'path' => '/system/audit-log',
+                    //     'can' => 'view-system-audit'
+                    // ],
+                    // ['divider' => true],
                     [
                         'name' => 'Users',
                         'path' => '/management-system/users',

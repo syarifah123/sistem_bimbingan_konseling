@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Post\PostController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\Post\PostCategoryController;
 
 
 Route::get('/', fn () => redirect()->route('login'));
@@ -13,6 +15,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    Route::prefix('postingan')->name('post.')->group(function () {
+        Route::resource('kategori', PostCategoryController::class);
+        Route::resource('posts', PostController::class);
+    });
     
     Route::prefix('management-system')->name('management.')->group(function () {
         // Users
